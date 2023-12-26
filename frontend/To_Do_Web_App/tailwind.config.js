@@ -18,7 +18,8 @@ export default {
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
-      jomhuria: ["Jomhuria", "cursive"]
+      jomhuria: ["Jomhuria", "cursive"],
+      inriaSans: ["Inria Sans", "sans-serif"],
     },
     screens:{
       'mobile':'375px',
