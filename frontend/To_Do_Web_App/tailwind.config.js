@@ -7,17 +7,14 @@ export default {
   theme: {
     colors: {
       transparent: 'transparent',
-      'green':'#00DD00',
-      'darkGreen':'#01532C',
       'white': '#ffffff',
       'black':'#000000',
-      'lightGrey':'#D9D9D9',
-      'lightGrey1':'#BBBBBB',
-      'lightGrey2':'#525252',
-      'grey':'#333333',
-      'darkGrey':'#282828',
-      'blue':'#6EB6FF',
-      'red' :'#FF0000',
+      'primaryGrey':'#E1DEDE',
+      'secondGrey':'#F4F4F4',
+      'textGrey':'#898787',
+      'placeholderGrey':'#5F5F5F',
+      'darkGrey':'#313131',
+      'green':'#00A285',
     },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
