@@ -2,6 +2,7 @@ import React from "react";
 import Title from "./Title";
 import TaskInput from "./TaskInput";
 import TaskList from "./TaskList";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -9,6 +10,7 @@ function Home() {
       <Title />
       <TaskInput />
       <TaskList />
+      <Footer />
     </div>
   );
 }
