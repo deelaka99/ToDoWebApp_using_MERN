@@ -14,16 +14,16 @@ function Task() {
         done
           ? "line-through bg-placeholderGrey"
           : "bg-secondGrey active:ring-2 hover:bg-white"
-      } mobile:h-[10vh] mobile:w-[70vw] mobile:rounded-[4px] drop-shadow-md mobile:px-2 py-1 flex shrink-0 `}
+      } mobile:h-[10vh] mobile:w-[70vw] tablet:h-[11vh] tablet:w-[65vw] mobile:rounded-[4px] tablet:rounded-[6px] drop-shadow-md mobile:px-2 tablet:px-5 py-1 flex shrink-0 `}
     >
       <div
-        className={`h-full w-[10vw] ${
+        className={`h-full mobile:w-[10vw] tablet:w-[10vw] ${
           done ? "line-through text-primaryGrey" : "text-textGrey"
         } flex items-center justify-center`}
       >
         {!done ? (
           <FontAwesomeIcon
-            className="mobile:text-[16px]"
+            className="mobile:text-[16px] tablet:text-[27px]"
             icon={faHandPointRight}
             onClick={() => {
               setDone(true);
@@ -31,7 +31,7 @@ function Task() {
           />
         ) : (
           <FontAwesomeIcon
-            className="mobile:text-[16px]"
+            className="mobile:text-[16px] tablet:text-[27px]"
             icon={faCheck}
             onClick={() => {
               setDone(false);
@@ -40,18 +40,21 @@ function Task() {
         )}
       </div>
       <div
-        className={`h-full w-[50vw]  ${
+        className={`h-full mobile:w-[50vw] tablet:w-[45vw] mobile:text-[16px] tablet:text-[25px] ${
           done ? "line-through text-primaryGrey" : "text-textGrey"
         } flex items-center justify-center`}
       >
         deelaka
       </div>
       <div
-        className={`h-full w-[10vw] ${
+        className={`h-full mobile:w-[10vw] tablet:w-[10vw] ${
           done ? "line-through text-primaryGrey" : "text-textGrey"
         } flex items-center justify-center`}
       >
-        <FontAwesomeIcon className="mobile:text-[16px]" icon={faTrashCan} />
+        <FontAwesomeIcon
+          className="mobile:text-[16px] tablet:text-[27px]"
+          icon={faTrashCan}
+        />
       </div>
     </div>
   );
