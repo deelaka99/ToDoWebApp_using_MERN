@@ -5,7 +5,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 function TaskInput() {
   return (
     <div className="w-full h-auto flex items-center justify-center">
-      <div className="flex pt-3 gap-1">
+      <div className="flex pt-3 mobile:gap-1 tablet:gap-2">
         <input
           type="text"
           className="bg-white font-inter mobile:w-[227px] mobile:h-[36px] tablet:w-[400px] tablet:h-[55px] mobile:rounded-[3px] tablet:rounded-[5px] mobile:pl-2 tablet:pl-10 mobile:text-[12px] tablet:text-[20px] text-textGrey outline-none focus:ring-2 drop-shadow placeholder:text-placeholderGrey"
