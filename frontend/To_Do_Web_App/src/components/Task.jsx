@@ -52,7 +52,7 @@ function Task() {
         } flex items-center justify-center`}
       >
         <FontAwesomeIcon
-          className="mobile:text-[16px] tablet:text-[27px] laptop:text-[20px]"
+          className="mobile:text-[16px] tablet:text-[27px] laptop:text-[20px] active:text-primaryGrey"
           icon={faTrashCan}
         />
       </div>
