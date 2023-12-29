@@ -11,6 +11,7 @@ export default {
       'black':'#000000',
       'primaryGrey':'#E1DEDE',
       'secondGrey':'#F4F4F4',
+      'thirdGrey':'#4F4F4F',
       'textGrey':'#898787',
       'placeholderGrey':'#5F5F5F',
       'darkGrey':'#313131',
