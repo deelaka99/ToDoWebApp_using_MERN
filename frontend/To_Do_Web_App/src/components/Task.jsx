@@ -5,9 +5,27 @@ import {
   faTrashCan,
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 function Task(prop) {
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(prop.status);
+
+  const handleDelete = (id) => {
+    axios
+      .delete("http://localhost:3001/delete/" + id)
+      .then((result) => location.reload())
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleEdit = (id) => {
+    axios
+      .put("http://localhost:3001/update/" + id)
+      .then((result) => location.reload())
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div
       className={`${
@@ -21,12 +39,13 @@ function Task(prop) {
           done ? "line-through text-primaryGrey" : "text-textGrey"
         } flex items-center justify-center`}
       >
-        {!done ? (
+        {done === false ? (
           <FontAwesomeIcon
             className="mobile:text-[16px] tablet:text-[27px] laptop:text-[20px]"
             icon={faHandPointRight}
             onClick={() => {
               setDone(true);
+              handleEdit(prop.id);
             }}
           />
         ) : (
@@ -35,6 +54,7 @@ function Task(prop) {
             icon={faCheck}
             onClick={() => {
               setDone(false);
+              handleEdit(prop.id);
             }}
           />
         )}
@@ -54,6 +74,7 @@ function Task(prop) {
         <FontAwesomeIcon
           className="mobile:text-[16px] tablet:text-[27px] laptop:text-[20px] active:text-primaryGrey"
           icon={faTrashCan}
+          onClick={() => handleDelete(prop.id)}
         />
       </div>
     </div>
