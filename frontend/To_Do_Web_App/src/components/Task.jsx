@@ -6,7 +6,7 @@ import {
   faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Task() {
+function Task(prop) {
   const [done, setDone] = useState(false);
   return (
     <div
@@ -44,7 +44,7 @@ function Task() {
           done ? "line-through text-primaryGrey" : "text-textGrey"
         } flex items-center justify-center`}
       >
-        deelaka
+        {prop.task}
       </div>
       <div
         className={`h-full mobile:w-[10vw] tablet:w-[10vw] laptop:w-[8vw] ${
