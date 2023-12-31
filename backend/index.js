@@ -30,6 +30,12 @@ connectWithRetry();
 
 app.post("/add", (req, res) => {
   const task = req.body.task;
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://to-do-web-app-frontend-self.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   ToDoModel.create({
     task: task,
   })
@@ -38,6 +44,12 @@ app.post("/add", (req, res) => {
 });
 
 app.get("/get", (req, res) => {
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://to-do-web-app-frontend-self.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   ToDoModel.find()
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
@@ -45,6 +57,12 @@ app.get("/get", (req, res) => {
 
 app.put("/update/:id", (req, res) => {
   const { id } = req.params;
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://to-do-web-app-frontend-self.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   ToDoModel.findByIdAndUpdate({ _id: id }, { done: true })
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
@@ -52,6 +70,12 @@ app.put("/update/:id", (req, res) => {
 
 app.delete("/delete/:id", (req, res) => {
   const { id } = req.params;
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://to-do-web-app-frontend-self.vercel.app"
+  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   ToDoModel.findByIdAndDelete({ _id: id })
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
