@@ -15,8 +15,28 @@ app.use(
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://123wejith:123Wejith@cluster0.ljj2lyc.mongodb.net/toDoLists?retryWrites=true&w=majority"
+  "mongodb+srv://123wejith:123Wejith@cluster0.ljj2lyc.mongodb.net/toDoLists?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
 );
+
+const connectWithRetry = () => {
+  mongoose
+    .connect("your-connection-string", {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() => console.log("Connected to MongoDB"))
+    .catch((error) => {
+      console.error("Error connecting to MongoDB:", error.message);
+      // Retry logic with a delay
+      setTimeout(connectWithRetry, 5000);
+    });
+};
+
+connectWithRetry();
 
 app.post("/add", (req, res) => {
   const task = req.body.task;
