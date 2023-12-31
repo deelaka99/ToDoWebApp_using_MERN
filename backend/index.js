@@ -38,11 +38,6 @@ app.post("/add", (req, res) => {
 });
 
 app.get("/get", (req, res) => {
-  res.setHeader(
-    "Access-Control-Allow-Origin",
-    "https://to-do-web-app-frontend-self.vercel.app"
-  );
-  
   ToDoModel.find()
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
