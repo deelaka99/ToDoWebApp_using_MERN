@@ -7,7 +7,7 @@ const app = express();
 // app.use(cors());
 app.use(
   cors({
-    origin: ["https://to-do-web-app-using-mern.vercel.app/"],
+    origin: ["*"],
     methods: ["POST", "GET"],
     credentials: true,
   })
@@ -47,6 +47,6 @@ app.delete("/delete/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.listen(3001, () => {
-  console.log("Server is Running");
-});
+// app.listen(3001, () => {
+//   console.log("Server is Running");
+// });
