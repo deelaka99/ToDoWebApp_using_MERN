@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const ToDoModel = require("./Models/Todo");
+const { MONGO_URI } = process.env;
 
 const app = express();
 // app.use(cors());
@@ -14,13 +15,10 @@ app.use(
 );
 app.use(express.json());
 
-mongoose.connect(
-  "mongodb+srv://123wejith:123Wejith@cluster0.ljj2lyc.mongodb.net/toDoLists?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose.connect(MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const connectWithRetry = () => {
   mongoose
