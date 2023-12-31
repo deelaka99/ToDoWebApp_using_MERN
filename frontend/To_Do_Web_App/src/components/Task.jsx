@@ -12,7 +12,7 @@ function Task(prop) {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3001/delete/" + id)
+      .delete("https://to-do-web-app-using-mern.vercel.app/delete/" + id)
       .then((result) => location.reload())
       .catch((err) => {
         console.log(err);
@@ -21,7 +21,7 @@ function Task(prop) {
 
   const handleEdit = (id) => {
     axios
-      .put("http://localhost:3001/update/" + id)
+      .put("https://to-do-web-app-using-mern.vercel.app/update/" + id)
       .then((result) => location.reload())
       .catch((err) => console.log(err));
   };

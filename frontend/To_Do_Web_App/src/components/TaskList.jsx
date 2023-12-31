@@ -7,7 +7,7 @@ function TaskList() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/get")
+      .get("https://to-do-web-app-using-mern.vercel.app/get")
       .then((result) => setToDos(result.data))
       .catch((err) => console.log(err));
   }, []);
