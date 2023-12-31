@@ -5,7 +5,6 @@ const ToDoModel = require("./Models/Todo");
 const { MONGO_URI } = process.env;
 
 const app = express();
-// app.use(cors());
 app.use(
   cors({
     origin: ["*"],
@@ -57,6 +56,5 @@ app.delete("/delete/:id", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-// app.listen(3001, () => {
-//   console.log("Server is Running");
-// });
+// Export the Express app as a serverless function
+module.exports = app;
