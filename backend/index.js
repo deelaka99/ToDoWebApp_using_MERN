@@ -15,14 +15,9 @@ app.use(
 );
 app.use(express.json());
 
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
 const connectWithRetry = () => {
   mongoose
-    .connect("your-connection-string", {
+    .connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
