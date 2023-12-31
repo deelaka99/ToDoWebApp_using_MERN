@@ -7,7 +7,7 @@ const { MONGO_URI } = process.env;
 const app = express();
 app.use(
   cors({
-    origin: ["*"],
+    origin: ["https://to-do-web-app-frontend-self.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
