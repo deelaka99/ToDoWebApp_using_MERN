@@ -17,10 +17,7 @@ app.use(express.json());
 
 const connectWithRetry = () => {
   mongoose
-    .connect(MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(MONGO_URI)
     .then(() => console.log("Connected to MongoDB"))
     .catch((error) => {
       console.error("Error connecting to MongoDB:", error.message);
